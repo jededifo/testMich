@@ -5,10 +5,10 @@
   <meta charset="UTF-8" />
   <title>Emozioni Galleria</title>
   <style>
-    body {{ font-family: sans-serif; text-align: center; padding: 30px; }}
-    button {{ margin: 10px; padding: 15px 25px; font-size: 18px; cursor: pointer; }}
-    img {{ max-width: 80%; margin-top: 20px; display: none; }}
-    .frase {{ font-size: 20px; margin-top: 15px; }}
+    body { font-family: sans-serif; text-align: center; padding: 30px; }
+    button { margin: 10px; padding: 15px 25px; font-size: 18px; cursor: pointer; }
+    img { max-width: 80%; margin-top: 20px; display: none; }
+    .frase { font-size: 20px; margin-top: 15px; }
   </style>
 </head>
 <body>
@@ -23,25 +23,25 @@
   </div>
 
   <script>
-    const dati = {{
+    const dati = {
       triste: [
-        {{ img: "images/triste1.jpg", frase: "Anche nei giorni più grigi, sei amato." }},
-        {{ img: "images/triste2.jpg", frase: "La tristezza passa, tu resta forte." }},
-        {{ img: "images/triste3.jpg", frase: "Ogni lacrima è un seme di speranza." }}
+        { img: "images/triste1.jpg", frase: "Anche nei giorni più grigi, sei amato." },
+        { img: "images/triste2.jpg", frase: "La tristezza passa, tu resta forte." },
+        { img: "images/triste3.jpg", frase: "Ogni lacrima è un seme di speranza." }
       ],
       felice: [
-        {{ img: "images/felice1.jpg", frase: "La tua felicità illumina il mondo!" }},
-        {{ img: "images/felice2.jpg", frase: "Continua a sorridere, è contagioso." }},
-        {{ img: "images/felice3.jpg", frase: "Oggi è un giorno meraviglioso!" }}
+        { img: "images/felice1.jpg", frase: "La tua felicità illumina il mondo!" },
+        { img: "images/felice2.jpg", frase: "Continua a sorridere, è contagioso." },
+        { img: "images/felice3.jpg", frase: "Oggi è un giorno meraviglioso!" }
       ],
       mimanchi: [
-        {{ img: "images/mimanchi1.jpg", frase: "Mi manchi ogni singolo giorno." }},
-        {{ img: "images/mimanchi2.jpg", frase: "Vorrei poterti abbracciare adesso." }},
-        {{ img: "images/mimanchi3.jpg", frase: "Il mio cuore ti cerca ovunque." }}
+        { img: "images/mimanchi1.jpg", frase: "Mi manchi ogni singolo giorno." },
+        { img: "images/mimanchi2.jpg", frase: "Vorrei poterti abbracciare adesso." },
+        { img: "images/mimanchi3.jpg", frase: "Il mio cuore ti cerca ovunque." }
       ]
-    }};
+    };
 
-    function mostraRandom(gruppo) {{
+    function mostraRandom(gruppo) {
       const lista = dati[gruppo];
       const casuale = lista[Math.floor(Math.random() * lista.length)];
       const img = document.getElementById("immagine");
@@ -49,7 +49,7 @@
       img.src = casuale.img;
       img.style.display = 'block';
       frase.textContent = casuale.frase;
-    }}
+    }
   </script>
 </body>
 </html>
