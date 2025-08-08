@@ -52,6 +52,7 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     }
 
+    /* Layout container for image and frase */
     .display-container {
       display: flex;
       justify-content: center;
@@ -77,6 +78,7 @@
       background: #eee;
     }
 
+    /* Ancient yellow post-it style */
     .frase-postit {
       background: linear-gradient(135deg, #fdf5c2 0%, #f9e487 100%);
       border: 1.5px solid #e1c766;
@@ -96,6 +98,7 @@
       position: relative;
     }
     .frase-postit::after {
+      /* Optional: little dog-ear on the corner for a post-it effect */
       content: "";
       position: absolute;
       bottom: 10px;
@@ -125,6 +128,7 @@
       }
     }
 
+    /* Optional: style links inside the post-it */
     .frase-postit a {
       color: #3466af;
       text-decoration: underline;
@@ -148,103 +152,103 @@
   <script>
     const dati = {
       triste: [
-        { img: "images/triste1.jpeg", frase: 'Anche nei giorni più grigi, sei amato. <br><a href="https://www.youtube.com/watch?v=8UVNT4wvIGY" target="_blank">Somebody That I Used To Know</a>' },
-        { img: "images/triste2.jpeg", frase: 'Un abbraccio virtuale. <br><a href="https://www.youtube.com/watch?v=RB-RcX5DS5A" target="_blank">Someone Like You</a>' },
-        { img: "images/triste3.jpeg", frase: 'Ricorda: dopo la pioggia torna il sole. <br><a href="https://www.youtube.com/watch?v=YVkUvmDQ3HY" target="_blank">Fix You</a>' },
-        { img: "images/triste4.jpeg", frase: 'Ogni lacrima è un seme di speranza. <br><a href="https://www.youtube.com/watch?v=6Ejga4kJUts" target="_blank">Zombie</a>' },
-        { img: "images/triste5.jpeg", frase: 'Anche nei giorni più grigi, sei amato. <br><a href="https://www.youtube.com/watch?v=ZBR2G-iI3-I" target="_blank">Everybody Hurts</a>' },
-        { img: "images/triste6.jpeg", frase: 'La tristezza passa, tu resta forte. <br><a href="https://www.youtube.com/watch?v=hLQl3WQQoQ0" target="_blank">Someone Like You</a>' },
-        { img: "images/triste7.jpeg", frase: 'Sii gentile con te stesso. <br><a href="https://www.youtube.com/watch?v=uelHwf8o7_U" target="_blank">Love The Way You Lie</a>' },
-        { img: "images/triste8.jpeg", frase: 'Non sei solo. <br><a href="https://www.youtube.com/watch?v=V1bFr2SWP1I" target="_blank">Mad World</a>' },
-        { img: "images/triste9.jpeg", frase: 'Domani è un altro giorno. <br><a href="https://www.youtube.com/watch?v=ihhGekS3p3Y" target="_blank">Let It Be</a>' },
-        { img: "images/triste10.jpeg", frase: 'Cerca la luce dentro di te. <br><a href="https://www.youtube.com/watch?v=VbfpW0pbvaU" target="_blank">Counting Stars</a>' },
-        { img: "images/triste11.jpeg", frase: 'Ogni emozione è valida. <br><a href="https://www.youtube.com/watch?v=ktvTqknDobU" target="_blank">Radioactive</a>' },
-        { img: "images/triste12.jpeg", frase: 'Puoi superare tutto. <br><a href="https://www.youtube.com/watch?v=RgKAFK5djSk" target="_blank">See You Again</a>' },
-        { img: "images/triste13.jpeg", frase: 'Canta via la malinconia. <br><a href="https://www.youtube.com/watch?v=2vjPBrBU-TM" target="_blank">Chandelier</a>' },
-        { img: "images/triste14.jpeg", frase: 'Senti questa canzone. <br><a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank">Numb</a>' },
-        { img: "images/triste15.jpeg", frase: 'Scrivi ciò che provi. <br><a href="https://www.youtube.com/watch?v=ktvTqknDobU" target="_blank">Demons</a>' },
-        { img: "images/triste16.jpeg", frase: 'Prenditi il tuo tempo. <br><a href="https://www.youtube.com/watch?v=6hzrDeceEKc" target="_blank">Wonderwall</a>' },
-        { img: "images/triste17.jpeg", frase: 'Meriti serenità. <br><a href="https://www.youtube.com/watch?v=09R8_2nJtjg" target="_blank">Sugar</a>' },
-        { img: "images/triste18.jpeg", frase: 'Respira profondamente. <br><a href="https://www.youtube.com/watch?v=QQ3p9DghQqE" target="_blank">True Colors</a>' },
-        { img: "images/triste19.jpeg", frase: 'Va bene chiedere aiuto. <br><a href="https://www.youtube.com/watch?v=0G383538qzQ" target="_blank">Hall of Fame</a>' },
-        { img: "images/triste20.jpeg", frase: 'Sorridi, anche solo un po\'. <br><a href="https://www.youtube.com/watch?v=fLexgOxsZu0" target="_blank">Don't Worry Be Happy</a>' },
-        { img: "images/triste21.jpeg", frase: 'Lascia andare ciò che non puoi controllare. <br><a href="https://www.youtube.com/watch?v=y6Sxv-sUYtM" target="_blank">Happy</a>' },
-        { img: "images/triste22.jpeg", frase: 'Le emozioni passano. <br><a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank">Hello</a>' },
-        { img: "images/triste23.jpeg", frase: 'Ogni passo è importante. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/triste24.jpeg", frase: 'Tieniti stretto chi ti vuole bene. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/triste25.jpeg", frase: 'Oggi prendi cura di te. <br><a href="https://www.youtube.com/watch?v=JkK8g6FMEXE" target="_blank">Human</a>' },
-        { img: "images/triste26.jpeg", frase: 'Puoi risplendere di nuovo. <br><a href="https://www.youtube.com/watch?v=lp-EO5I60KA" target="_blank">Counting Stars</a>' },
-        { img: "images/triste27.jpeg", frase: 'Racconta a qualcuno come ti senti. <br><a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Perfect</a>' },
-        { img: "images/triste28.jpeg", frase: 'Ascolta il tuo cuore. <br><a href="https://www.youtube.com/watch?v=yCC_b5WHLX0" target="_blank">Listen To Your Heart</a>' },
-        { img: "images/triste29.jpeg", frase: 'Cerca il bello anche nei piccoli gesti. <br><a href="https://www.youtube.com/watch?v=6Ejga4kJUts" target="_blank">Zombie</a>' },
-        { img: "images/triste30.jpeg", frase: 'La notte è più buia prima dell\'alba. <br><a href="https://www.youtube.com/watch?v=4N3N1MlvVc4" target="_blank">Mad World</a>' }
+        { img: "images/triste1.jpeg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=8UVNT4wvIGY" target="_blank">Somebody That I Used To Know</a>' },
+        { img: "images/triste2.jpeg", frase: 'Un abbraccio virtuale. <a href="https://www.youtube.com/watch?v=RB-RcX5DS5A" target="_blank">Someone Like You</a>' },
+        { img: "images/triste3.jpeg", frase: 'Ricorda: dopo la pioggia torna il sole. <a href="https://www.youtube.com/watch?v=YVkUvmDQ3HY" target="_blank">Fix You</a>' },
+        { img: "images/triste4.jpeg", frase: 'Ogni lacrima è un seme di speranza.' },
+        { img: "images/triste5.jpeg", frase: 'Anche nei giorni più grigi, sei amato.' },
+        { img: "images/triste6.jpeg", frase: 'La tristezza passa, tu resta forte.' },
+        { img: "images/triste7.jpeg", frase: 'Sii gentile con te stesso.' },
+        { img: "images/triste8.jpeg", frase: 'Non sei solo.' },
+        { img: "images/triste9.jpeg", frase: 'Domani è un altro giorno.' },
+        { img: "images/triste10.jpeg", frase: 'Cerca la luce dentro di te.' },
+        { img: "images/triste11.jpeg", frase: 'Ogni emozione è valida.' },
+        { img: "images/triste12.jpeg", frase: 'Puoi superare tutto.' },
+        { img: "images/triste13.jpeg", frase: 'Canta via la malinconia.' },
+        { img: "images/triste14.jpeg", frase: 'Senti questa canzone: <a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank">Numb</a>' },
+        { img: "images/triste15.jpeg", frase: 'Scrivi ciò che provi.' },
+        { img: "images/triste16.jpeg", frase: 'Prenditi il tuo tempo.' },
+        { img: "images/triste17.jpeg", frase: 'Meriti serenità.' },
+        { img: "images/triste18.jpeg", frase: 'Respira profondamente.' },
+        { img: "images/triste19.jpeg", frase: 'Va bene chiedere aiuto.' },
+        { img: "images/triste20.jpeg", frase: 'Sorridi, anche solo un po\'.' },
+        { img: "images/triste21.jpeg", frase: 'Lascia andare ciò che non puoi controllare.' },
+        { img: "images/triste22.jpeg", frase: 'Le emozioni passano.' },
+        { img: "images/triste23.jpeg", frase: 'Ogni passo è importante.' },
+        { img: "images/triste24.jpeg", frase: 'Tieniti stretto chi ti vuole bene.' },
+        { img: "images/triste25.jpeg", frase: 'Oggi prendi cura di te.' },
+        { img: "images/triste26.jpeg", frase: 'Puoi risplendere di nuovo.' },
+        { img: "images/triste27.jpeg", frase: 'Racconta a qualcuno come ti senti.' },
+        { img: "images/triste28.jpeg", frase: 'Ascolta il tuo cuore.' },
+        { img: "images/triste29.jpeg", frase: 'Cerca il bello anche nei piccoli gesti.' },
+        { img: "images/triste30.jpeg", frase: 'La notte è più buia prima dell\'alba.' }
       ],
       felice: [
-        { img: "images/felice1.jpeg", frase: 'La tua felicità illumina il mondo! <br><a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
-        { img: "images/felice2.jpeg", frase: 'Che bello vederti sorridere! <br><a href="https://www.youtube.com/watch?v=OPf0YbXqDm0" target="_blank">Uptown Funk</a>' },
-        { img: "images/felice3.jpeg", frase: 'Continua a sorridere, è contagioso. <br><a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target="_blank">Despacito</a>' },
-        { img: "images/felice4.jpeg", frase: 'Oggi è un giorno meraviglioso! <br><a href="https://www.youtube.com/watch?v=09R8_2nJtjg" target="_blank">Sugar</a>' },
-        { img: "images/felice5.jpeg", frase: 'Condividi la tua gioia. <br><a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">Celebrate</a>' },
-        { img: "images/felice6.jpeg", frase: 'Balla come se nessuno ti guardasse! <br><a href="https://www.youtube.com/watch?v=ru0K8uYEZWw" target="_blank">Can't Stop The Feeling!</a>' },
-        { img: "images/felice7.jpeg", frase: 'Felicità è reale solo se condivisa. <br><a href="https://www.youtube.com/watch?v=0G383538qzQ" target="_blank">Hall of Fame</a>' },
-        { img: "images/felice8.jpeg", frase: 'La vita è bella. <br><a href="https://www.youtube.com/watch?v=HgzGwKwLmgM" target="_blank">Don't Stop Me Now</a>' },
-        { img: "images/felice9.jpeg", frase: 'Hai una luce speciale. <br><a href="https://www.youtube.com/watch?v=PIh2xe4jnpk" target="_blank">Cheerleader</a>' },
-        { img: "images/felice10.jpeg", frase: 'Ridi di gusto. <br><a href="https://www.youtube.com/watch?v=6Ejga4kJUts" target="_blank">Zombie</a>' },
-        { img: "images/felice11.jpeg", frase: 'Esprimi gratitudine. <br><a href="https://www.youtube.com/watch?v=RgKAFK5djSk" target="_blank">See You Again</a>' },
-        { img: "images/felice12.jpeg", frase: 'Senti questa energia positiva. <br><a href="https://www.youtube.com/watch?v=KQ6zr6kCPj8" target="_blank">Party Rock Anthem</a>' },
-        { img: "images/felice13.jpeg", frase: 'Che giornata fantastica! <br><a href="https://www.youtube.com/watch?v=Y66j_BUCBMY" target="_blank">Rather Be</a>' },
-        { img: "images/felice14.jpeg", frase: 'Abbraccia chi ami. <br><a href="https://www.youtube.com/watch?v=JkK8g6FMEXE" target="_blank">Human</a>' },
-        { img: "images/felice15.jpeg", frase: 'Vivi ogni momento. <br><a href="https://www.youtube.com/watch?v=450p7goxZqg" target="_blank">On Top of the World</a>' },
-        { img: "images/felice16.jpeg", frase: 'Sii fiero di te stesso. <br><a href="https://www.youtube.com/watch?v=lp-EO5I60KA" target="_blank">Counting Stars</a>' },
-        { img: "images/felice17.jpeg", frase: 'Festeggia le piccole vittorie. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/felice18.jpeg", frase: 'Canta la tua canzone preferita. <br><a href="https://www.youtube.com/watch?v=2vjPBrBU-TM" target="_blank">Chandelier</a>' },
-        { img: "images/felice19.jpeg", frase: 'Regala un sorriso. <br><a href="https://www.youtube.com/watch?v=fLexgOxsZu0" target="_blank">Don't Worry Be Happy</a>' },
-        { img: "images/felice20.jpeg", frase: 'Segui il tuo entusiasmo. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/felice21.jpeg", frase: 'Il mondo è pieno di colori. <br><a href="https://www.youtube.com/watch?v=VbfpW0pbvaU" target="_blank">Counting Stars</a>' },
-        { img: "images/felice22.jpeg", frase: 'Ama ciò che fai. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/felice23.jpeg", frase: 'Sei una forza positiva. <br><a href="https://www.youtube.com/watch?v=y6Sxv-sUYtM" target="_blank">Happy</a>' },
-        { img: "images/felice24.jpeg", frase: 'Lasciati ispirare dalla musica. <br><a href="https://www.youtube.com/watch?v=kJQP7kiw5Fk" target="_blank">Despacito</a>' },
-        { img: "images/felice25.jpeg", frase: 'Ogni giorno è un dono. <br><a href="https://www.youtube.com/watch?v=6hzrDeceEKc" target="_blank">Wonderwall</a>' },
-        { img: "images/felice26.jpeg", frase: 'Sorridi anche alle nuvole. <br><a href="https://www.youtube.com/watch?v=ktvTqknDobU" target="_blank">Demons</a>' },
-        { img: "images/felice27.jpeg", frase: 'La gioia è dentro di te. <br><a href="https://www.youtube.com/watch?v=V1bFr2SWP1I" target="_blank">Mad World</a>' },
-        { img: "images/felice28.jpeg", frase: 'Sii il cambiamento che vuoi vedere. <br><a href="https://www.youtube.com/watch?v=VPRjCeoBqrI" target="_blank">Shape of You</a>' },
-        { img: "images/felice29.jpeg", frase: 'Diffondi la tua allegria. <br><a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
-        { img: "images/felice30.jpeg", frase: 'Oggi va tutto bene! <br><a href="https://www.youtube.com/watch?v=09R8_2nJtjg" target="_blank">Sugar</a>' }
+        { img: "images/felice1.jpeg", frase: 'La tua felicità illumina il mondo! <a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
+        { img: "images/felice2.jpeg", frase: 'Che bello vederti sorridere!' },
+        { img: "images/felice3.jpeg", frase: 'Continua a sorridere, è contagioso.' },
+        { img: "images/felice4.jpeg", frase: 'Oggi è un giorno meraviglioso!' },
+        { img: "images/felice5.jpeg", frase: 'Condividi la tua gioia.' },
+        { img: "images/felice6.jpeg", frase: 'Balla come se nessuno ti guardasse!' },
+        { img: "images/felice7.jpeg", frase: 'Felicità è reale solo se condivisa.' },
+        { img: "images/felice8.jpeg", frase: 'La vita è bella.' },
+        { img: "images/felice9.jpeg", frase: 'Hai una luce speciale.' },
+        { img: "images/felice10.jpeg", frase: 'Ridi di gusto.' },
+        { img: "images/felice11.jpeg", frase: 'Esprimi gratitudine.' },
+        { img: "images/felice12.jpeg", frase: 'Senti questa energia positiva.' },
+        { img: "images/felice13.jpeg", frase: 'Che giornata fantastica!' },
+        { img: "images/felice14.jpeg", frase: 'Abbraccia chi ami.' },
+        { img: "images/felice15.jpeg", frase: 'Vivi ogni momento.' },
+        { img: "images/felice16.jpeg", frase: 'Sii fiero di te stesso.' },
+        { img: "images/felice17.jpeg", frase: 'Festeggia le piccole vittorie.' },
+        { img: "images/felice18.jpeg", frase: 'Canta la tua canzone preferita: <a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">Celebrate</a>' },
+        { img: "images/felice19.jpeg", frase: 'Regala un sorriso.' },
+        { img: "images/felice20.jpeg", frase: 'Segui il tuo entusiasmo.' },
+        { img: "images/felice21.jpeg", frase: 'Il mondo è pieno di colori.' },
+        { img: "images/felice22.jpeg", frase: 'Ama ciò che fai.' },
+        { img: "images/felice23.jpeg", frase: 'Sei una forza positiva.' },
+        { img: "images/felice24.jpeg", frase: 'Lasciati ispirare dalla musica.' },
+        { img: "images/felice25.jpeg", frase: 'Ogni giorno è un dono.' },
+        { img: "images/felice26.jpeg", frase: 'Sorridi anche alle nuvole.' },
+        { img: "images/felice27.jpeg", frase: 'La gioia è dentro di te.' },
+        { img: "images/felice28.jpeg", frase: 'Sii il cambiamento che vuoi vedere.' },
+        { img: "images/felice29.jpeg", frase: 'Diffondi la tua allegria.' },
+        { img: "images/felice30.jpeg", frase: 'Oggi va tutto bene!' }
       ],
       mimanchi: [
-        { img: "images/mimanchi1.jpeg", frase: 'Mi manchi ogni singolo giorno. <br><a href="https://www.youtube.com/watch?v=2GJIQb7f4rA" target="_blank">Mi Manchi</a>' },
-        { img: "images/mimanchi2.jpeg", frase: 'Vorrei poterti abbracciare adesso. <br><a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
-        { img: "images/mimanchi3.jpeg", frase: 'Il mio cuore ti cerca ovunque. <br><a href="https://www.youtube.com/watch?v=RB-RcX5DS5A" target="_blank">Someone Like You</a>' },
-        { img: "images/mimanchi1.jpg", frase: 'Penso spesso a te. <br><a href="https://www.youtube.com/watch?v=JkK8g6FMEXE" target="_blank">Human</a>' },
-        { img: "images/mimanchi2.jpg", frase: 'Anche la distanza non cambia ciò che provo. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/mimanchi3.jpg", frase: 'Ogni ricordo con te è prezioso. <br><a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Perfect</a>' },
-        { img: "images/mimanchi4.jpg", frase: 'Ti aspetto con ansia. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/mimanchi5.jpg", frase: 'La nostalgia è una forma d\'amore. <br><a href="https://www.youtube.com/watch?v=4N3N1MlvVc4" target="_blank">Mad World</a>' },
-        { img: "images/mimanchi6.jpg", frase: 'Spero di rivederti presto. <br><a href="https://www.youtube.com/watch?v=YQHsXMglC9A" target="_blank">Hello</a>' },
-        { img: "images/mimanchi7.jpg", frase: 'Mi mancano i tuoi sorrisi. <br><a href="https://www.youtube.com/watch?v=y6Sxv-sUYtM" target="_blank">Happy</a>' },
-        { img: "images/mimanchi8.jpg", frase: 'La lontananza rafforza i sentimenti. <br><a href="https://www.youtube.com/watch?v=lp-EO5I60KA" target="_blank">Counting Stars</a>' },
-        { img: "images/mimanchi9.jpg", frase: 'Non vedo l\'ora di riabbracciarti. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/mimanchi10.jpg", frase: 'Mando un pensiero a te. <br><a href="https://www.youtube.com/watch?v=hLQl3WQQoQ0" target="_blank">Someone Like You</a>' },
-        { img: "images/mimanchi11.jpg", frase: 'Ogni giorno senza di te è più lungo. <br><a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
-        { img: "images/mimanchi12.jpg", frase: 'Ascolta questa canzone. <br><a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
-        { img: "images/mimanchi13.jpg", frase: 'Mi manchi come l\'aria. <br><a href="https://www.youtube.com/watch?v=ktvTqknDobU" target="_blank">Radioactive</a>' },
-        { img: "images/mimanchi14.jpg", frase: 'Ci rivedremo presto. <br><a href="https://www.youtube.com/watch?v=Y66j_BUCBMY" target="_blank">Rather Be</a>' },
-        { img: "images/mimanchi15.jpg", frase: 'Il tempo senza di te scorre piano. <br><a href="https://www.youtube.com/watch?v=V1bFr2SWP1I" target="_blank">Mad World</a>' },
-        { img: "images/mimanchi16.jpg", frase: 'Ogni messaggio mi avvicina a te. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/mimanchi17.jpg", frase: 'Vorrei che fossi qui. <br><a href="https://www.youtube.com/watch?v=GJY8jJkDoMY" target="_blank">With or Without You</a>' },
-        { img: "images/mimanchi18.jpg", frase: 'La tua voce mi manca. <br><a href="https://www.youtube.com/watch?v=VbfpW0pbvaU" target="_blank">Counting Stars</a>' },
-        { img: "images/mimanchi19.jpg", frase: 'Ti penso sempre. <br><a href="https://www.youtube.com/watch?v=6Ejga4kJUts" target="_blank">Zombie</a>' },
-        { img: "images/mimanchi20.jpg", frase: 'La tua assenza si sente. <br><a href="https://www.youtube.com/watch?v=JkK8g6FMEXE" target="_blank">Human</a>' },
-        { img: "images/mimanchi21.jpg", frase: 'Ti porto nel cuore. <br><a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">Celebrate</a>' },
-        { img: "images/mimanchi22.jpg", frase: 'Nessuno può prendere il tuo posto. <br><a href="https://www.youtube.com/watch?v=RgKAFK5djSk" target="_blank">See You Again</a>' },
-        { img: "images/mimanchi23.jpg", frase: 'Anche il silenzio parla di te. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' },
-        { img: "images/mimanchi24.jpg", frase: 'Sei sempre nei miei pensieri. <br><a href="https://www.youtube.com/watch?v=2Vv-BfVoq4g" target="_blank">Perfect</a>' },
-        { img: "images/mimanchi25.jpeg", frase: 'Sogno il giorno in cui ci rivedremo. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/mimanchi26.jpg", frase: 'Mi manchi tanto. <br><a href="https://www.youtube.com/watch?v=2GJIQb7f4rA" target="_blank">Mi Manchi</a>' },
-        { img: "images/mimanchi27.jpeg", frase: 'Ogni distanza è colmata da un ricordo. <br><a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
-        { img: "images/mimanchi28.jpg", frase: 'Ti dedico questa canzone. <br><a href="https://www.youtube.com/watch?v=GJY8jJkDoMY" target="_blank">With or Without You</a>' },
-        { img: "images/mimanchi29.jpg", frase: 'Ci vediamo presto, lo prometto. <br><a href="https://www.youtube.com/watch?v=IdneKLhsWOQ" target="_blank">Home</a>' },
-        { img: "images/mimanchi30.jpg", frase: 'Mando un abbraccio virtuale. <br><a href="https://www.youtube.com/watch?v=wnJ6LuUFpMo" target="_blank">The Climb</a>' }
+        { img: "images/mimanchi1.jpeg", frase: 'Mi manchi ogni singolo giorno. <a href="https://www.youtube.com/watch?v=2GJIQb7f4rA" target="_blank">Mi Manchi - Fausto Leali</a>' },
+        { img: "images/mimanchi2.jpeg", frase: 'Vorrei poterti abbracciare adesso.' },
+        { img: "images/mimanchi3.jpeg", frase: 'Il mio cuore ti cerca ovunque.' },
+        { img: "images/mimanchi1.jpg", frase: 'Penso spesso a te.' },
+        { img: "images/mimanchi2.jpg", frase: 'Anche la distanza non cambia ciò che provo.' },
+        { img: "images/mimanchi3.jpg", frase: 'Ogni ricordo con te è prezioso.' },
+        { img: "images/mimanchi4.jpg", frase: 'Ti aspetto con ansia.' },
+        { img: "images/mimanchi5.jpg", frase: 'La nostalgia è una forma d\'amore.' },
+        { img: "images/mimanchi6.jpg", frase: 'Spero di rivederti presto.' },
+        { img: "images/mimanchi7.jpg", frase: 'Mi mancano i tuoi sorrisi.' },
+        { img: "images/mimanchi8.jpg", frase: 'La lontananza rafforza i sentimenti.' },
+        { img: "images/mimanchi9.jpg", frase: 'Non vedo l\'ora di riabbracciarti.' },
+        { img: "images/mimanchi10.jpg", frase: 'Mando un pensiero a te.' },
+        { img: "images/mimanchi11.jpg", frase: 'Ogni giorno senza di te è più lungo.' },
+        { img: "images/mimanchi12.jpg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
+        { img: "images/mimanchi13.jpg", frase: 'Mi manchi come l\'aria.' },
+        { img: "images/mimanchi14.jpg", frase: 'Ci rivedremo presto.' },
+        { img: "images/mimanchi15.jpg", frase: 'Il tempo senza di te scorre piano.' },
+        { img: "images/mimanchi16.jpg", frase: 'Ogni messaggio mi avvicina a te.' },
+        { img: "images/mimanchi17.jpg", frase: 'Vorrei che fossi qui.' },
+        { img: "images/mimanchi18.jpg", frase: 'La tua voce mi manca.' },
+        { img: "images/mimanchi19.jpg", frase: 'Ti penso sempre.' },
+        { img: "images/mimanchi20.jpg", frase: 'La tua assenza si sente.' },
+        { img: "images/mimanchi21.jpg", frase: 'Ti porto nel cuore.' },
+        { img: "images/mimanchi22.jpg", frase: 'Nessuno può prendere il tuo posto.' },
+        { img: "images/mimanchi23.jpg", frase: 'Anche il silenzio parla di te.' },
+        { img: "images/mimanchi24.jpg", frase: 'Sei sempre nei miei pensieri.' },
+        { img: "images/mimanchi25.jpeg", frase: 'Sogno il giorno in cui ci rivedremo.' },
+        { img: "images/mimanchi26.jpg", frase: 'Mi manchi tanto.' },
+        { img: "images/mimanchi27.jpeg", frase: 'Ogni distanza è colmata da un ricordo.' },
+        { img: "images/mimanchi28.jpg", frase: 'Ti dedico questa canzone: <a href="https://www.youtube.com/watch?v=GJY8jJkDoMY" target="_blank">With or Without You</a>' },
+        { img: "images/mimanchi29.jpg", frase: 'Ci vediamo presto, lo prometto.' },
+        { img: "images/mimanchi30.jpg", frase: 'Mando un abbraccio virtuale.' }
       ]
     };
 
@@ -255,7 +259,7 @@
       const frase = document.getElementById("frase");
       img.src = casuale.img;
       img.style.display = 'block';
-      frase.innerHTML = casuale.frase;
+      frase.innerHTML = casuale.frase; // Use innerHTML so links work!
       frase.style.display = 'block';
     }
   </script>
