@@ -1,29 +1,146 @@
-
 <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
   <title>Emozioni Galleria</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 30px;
-  /* Soft pastel background with gradient */
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  min-height: 100vh;
-}
-    button { margin: 10px; padding: 15px 25px; font-size: 18px; cursor: pointer; }
-    img { max-width: 50%; margin-top: 20px; }
-    .frase { font-size: 20px; margin-top: 15px; display: none; }
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 30px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+
+    .btn {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      cursor: pointer;
+      color: #153a6b; /* Dark blue text */
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
+      font-weight: bold;
+    }
+
+    .btn-triste {
+      background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
+    }
+    .btn-triste:hover {
+      background: linear-gradient(90deg, #c2e9fb 0%, #a1c4fd 100%);
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .btn-felice {
+      background: linear-gradient(90deg, #b7ffb2 0%, #5ee7df 100%);
+    }
+    .btn-felice:hover {
+      background: linear-gradient(90deg, #5ee7df 0%, #b7ffb2 100%);
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    .btn-mimanchi {
+      background: linear-gradient(90deg, #fbc2eb 0%, #fcb69f 100%);
+    }
+    .btn-mimanchi:hover {
+      background: linear-gradient(90deg, #fcb69f 0%, #fbc2eb 100%);
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+
+    /* Layout container for image and frase */
+    .display-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 40px;
+      gap: 30px;
+      min-height: 250px;
+    }
+
+    .image-side {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 180px;
+    }
+
+    img {
+      max-width: 180px;
+      max-height: 180px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      display: block;
+      background: #eee;
+    }
+
+    /* Ancient yellow post-it style */
+    .frase-postit {
+      background: linear-gradient(135deg, #fdf5c2 0%, #f9e487 100%);
+      border: 1.5px solid #e1c766;
+      border-radius: 10px 18px 12px 10px;
+      box-shadow:
+        2px 4px 12px 0 rgba(194, 161, 54, 0.16),
+        0 2px 0 0 #ead349,
+        inset 0 1px 0 0 #fffbe6;
+      font-size: 22px;
+      color: #6a5b21;
+      font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+      padding: 32px 26px 26px 26px;
+      min-width: 220px;
+      min-height: 100px;
+      text-align: left;
+      display: none;
+      position: relative;
+    }
+    .frase-postit::after {
+      /* Optional: little dog-ear on the corner for a post-it effect */
+      content: "";
+      position: absolute;
+      bottom: 10px;
+      right: 12px;
+      width: 30px;
+      height: 30px;
+      background: linear-gradient(135deg, #f7e388 60%, #f5e5a3 100%);
+      border-radius: 0 0 9px 0;
+      box-shadow: 2px 2px 4px 0 rgba(194, 161, 54, 0.11);
+      transform: rotate(8deg);
+      z-index: 1;
+    }
+    @media (max-width: 700px) {
+      .display-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+      }
+      .frase-postit {
+        min-width: 0;
+        width: 98vw;
+        font-size: 19px;
+        padding: 18px 8px 20px 12px;
+      }
+      .image-side img {
+        max-width: 60vw;
+      }
+    }
+
   </style>
 </head>
 <body>
   <h1>Come ti senti oggi?</h1>
-  <button onclick="mostraRandom('triste')">Sono triste</button>
-  <button onclick="mostraRandom('felice')">Sono felice</button>
-  <button onclick="mostraRandom('mimanchi')">Mi manchi</button>
+  <button class="btn btn-triste" onclick="mostraRandom('triste')">Sono triste</button>
+  <button class="btn btn-felice" onclick="mostraRandom('felice')">Sono felice</button>
+  <button class="btn btn-mimanchi" onclick="mostraRandom('mimanchi')">Mi manchi</button>
 
-  <div id="output">
-    <img id="immagine" src="" />
-    <div id="frase" class="frase"></div>
+  <div class="display-container" id="output">
+    <div class="image-side">
+      <img id="immagine" src="" alt="emozione" style="display:none;" />
+    </div>
+    <div id="frase" class="frase-postit"></div>
   </div>
 
   <script>
@@ -131,7 +248,7 @@
 ]
     };
 
-    function mostraRandom(gruppo) {
+     function mostraRandom(gruppo) {
       const lista = dati[gruppo];
       const casuale = lista[Math.floor(Math.random() * lista.length)];
       const img = document.getElementById("immagine");
@@ -139,6 +256,7 @@
       img.src = casuale.img;
       img.style.display = 'block';
       frase.textContent = casuale.frase;
+      frase.style.display = 'block';
     }
   </script>
 </body>
