@@ -1,277 +1,144 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8" />
-  <title>Emozioni Galleria</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 30px;
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh;
-    }
+<script>
+  const dati = {
+    triste: [
+      { img: "images/triste1.jpeg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=8UVNT4wvIGY" target="_blank">Somebody That I Used To Know</a>' },
+      { img: "images/triste2.jpg", frase: 'Un abbraccio virtuale. <a href="https://www.youtube.com/watch?v=RB-RcX5DS5A" target="_blank">Someone Like You</a>' },
+      { img: "images/triste3.jpg", frase: 'Ricorda: dopo la pioggia torna il sole. <a href="https://www.youtube.com/watch?v=YVkUvmDQ3HY" target="_blank">Fix You</a>' },
+      { img: "images/triste4.jpg", frase: 'Ogni lacrima è un seme di speranza.' },
+      { img: "images/triste5.jpg", frase: 'Anche nei giorni più grigi, sei amato.' },
+      { img: "images/triste6.jpg", frase: 'La tristezza passa, tu resta forte.' },
+      { img: "images/triste7.jpg", frase: 'Sii gentile con te stesso.' },
+      { img: "images/triste8.jpg", frase: 'Non sei solo.' },
+      { img: "images/triste9.jpg", frase: 'Domani è un altro giorno.' },
+      { img: "images/triste10.jpg", frase: 'Cerca la luce dentro di te.' },
+      { img: "images/triste11.jpg", frase: 'Ogni emozione è valida.' },
+      { img: "images/triste12.jpg", frase: 'Puoi superare tutto.' },
+      { img: "images/triste13.jpg", frase: 'Canta via la malinconia.' },
+      { img: "images/triste14.jpg", frase: 'Senti questa canzone: <a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank">Numb</a>' },
+      { img: "images/triste15.jpg", frase: 'Scrivi ciò che provi.' },
+      { img: "images/triste16.jpg", frase: 'Prenditi il tuo tempo.' },
+      { img: "images/triste17.jpeg", frase: 'Meriti serenità.' },
+      { img: "images/triste18.jpg", frase: 'Respira profondamente.' },
+      { img: "images/triste19.jpg", frase: 'Va bene chiedere aiuto.' },
+      { img: "images/triste20.jpg", frase: 'Sorridi, anche solo un po\'.' },
+      { img: "images/triste21.jpg", frase: 'Lascia andare ciò che non puoi controllare.' },
+      { img: "images/triste22.jpg", frase: 'Le emozioni passano.' },
+      { img: "images/triste23.jpg", frase: 'Ogni passo è importante.' },
+      { img: "images/triste24.jpg", frase: 'Tieniti stretto chi ti vuole bene.' },
+      { img: "images/triste25.jpg", frase: 'Oggi prendi cura di te.' },
+      { img: "images/triste26.jpg", frase: 'Puoi risplendere di nuovo.' },
+      { img: "images/triste27.jpg", frase: 'Racconta a qualcuno come ti senti.' },
+      { img: "images/triste28.jpg", frase: 'Ascolta il tuo cuore.' },
+      { img: "images/triste29.jpg", frase: 'Cerca il bello anche nei piccoli gesti.' },
+      { img: "images/triste30.jpg", frase: 'La notte è più buia prima dell\'alba.' }
+    ],
+    felice: [
+      { img: "images/felice1.jpeg", frase: 'La tua felicità illumina il mondo! <a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
+      { img: "images/felice2.jpeg", frase: 'Che bello vederti sorridere!' },
+      { img: "images/felice3.jpeg", frase: 'Continua a sorridere, è contagioso.' },
+      { img: "images/felice4.jpeg", frase: 'Oggi è un giorno meraviglioso!' },
+      { img: "images/felice5.jpeg", frase: 'Condividi la tua gioia.' },
+      { img: "images/felice6.jpeg", frase: 'Balla come se nessuno ti guardasse!' },
+      { img: "images/felice7.jpeg", frase: 'Felicità è reale solo se condivisa.' },
+      { img: "images/felice8.jpeg", frase: 'La vita è bella.' },
+      { img: "images/felice9.jpeg", frase: 'Hai una luce speciale.' },
+      { img: "images/felice10.jpeg", frase: 'Ridi di gusto.' },
+      { img: "images/felice11.jpeg", frase: 'Esprimi gratitudine.' },
+      { img: "images/felice12.jpeg", frase: 'Senti questa energia positiva.' },
+      { img: "images/felice13.jpeg", frase: 'Che giornata fantastica!' },
+      { img: "images/felice14.jpeg", frase: 'Abbraccia chi ami.' },
+      { img: "images/felice15.jpeg", frase: 'Vivi ogni momento.' },
+      { img: "images/felice16.jpeg", frase: 'Sii fiero di te stesso.' },
+      { img: "images/felice17.jpeg", frase: 'Festeggia le piccole vittorie.' },
+      { img: "images/felice18.jpeg", frase: 'Canta la tua canzone preferita: <a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">Celebrate</a>' },
+      { img: "images/felice19.jpeg", frase: 'Regala un sorriso.' },
+      { img: "images/felice20.jpeg", frase: 'Segui il tuo entusiasmo.' },
+      { img: "images/felice21.jpeg", frase: 'Il mondo è pieno di colori.' },
+      { img: "images/felice22.jpeg", frase: 'Ama ciò che fai.' },
+      { img: "images/felice23.jpeg", frase: 'Sei una forza positiva.' },
+      { img: "images/felice24.jpeg", frase: 'Lasciati ispirare dalla musica.' },
+      { img: "images/felice25.jpeg", frase: 'Ogni giorno è un dono.' },
+      { img: "images/felice26.jpeg", frase: 'Sorridi anche alle nuvole.' },
+      { img: "images/felice27.jpeg", frase: 'La gioia è dentro di te.' },
+      { img: "images/felice28.jpeg", frase: 'Sii il cambiamento che vuoi vedere.' },
+      { img: "images/felice29.jpeg", frase: 'Diffondi la tua allegria.' },
+      { img: "images/felice30.jpeg", frase: 'Oggi va tutto bene!' }
+    ],
+    mimanchi: [
+      { img: "images/mimanchi1.jpeg", frase: 'Mi manchi ogni singolo giorno. <a href="https://www.youtube.com/watch?v=2GJIQb7f4rA" target="_blank">Mi Manchi - Fausto Leali</a>' },
+      { img: "images/mimanchi2.jpeg", frase: 'Vorrei poterti abbracciare adesso.' },
+      { img: "images/mimanchi3.jpeg", frase: 'Il mio cuore ti cerca ovunque.' },
+      { img: "images/mimanchi1.jpg", frase: 'Penso spesso a te.' },
+      { img: "images/mimanchi2.jpg", frase: 'Anche la distanza non cambia ciò che provo.' },
+      { img: "images/mimanchi3.jpg", frase: 'Ogni ricordo con te è prezioso.' },
+      { img: "images/mimanchi4.jpg", frase: 'Ti aspetto con ansia.' },
+      { img: "images/mimanchi5.jpg", frase: 'La nostalgia è una forma d\'amore.' },
+      { img: "images/mimanchi6.jpg", frase: 'Spero di rivederti presto.' },
+      { img: "images/mimanchi7.jpg", frase: 'Mi mancano i tuoi sorrisi.' },
+      { img: "images/mimanchi8.jpg", frase: 'La lontananza rafforza i sentimenti.' },
+      { img: "images/mimanchi9.jpg", frase: 'Non vedo l\'ora di riabbracciarti.' },
+      { img: "images/mimanchi10.jpg", frase: 'Mando un pensiero a te.' },
+      { img: "images/mimanchi11.jpg", frase: 'Ogni giorno senza di te è più lungo.' },
+      { img: "images/mimanchi12.jpg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
+      { img: "images/mimanchi13.jpg", frase: 'Mi manchi come l\'aria.' },
+      { img: "images/mimanchi14.jpg", frase: 'Ci rivedremo presto.' },
+      { img: "images/mimanchi15.jpg", frase: 'Il tempo senza di te scorre piano.' },
+      { img: "images/mimanchi16.jpg", frase: 'Ogni messaggio mi avvicina a te.' },
+      { img: "images/mimanchi17.jpg", frase: 'Vorrei che fossi qui.' },
+      { img: "images/mimanchi18.jpg", frase: 'La tua voce mi manca.' },
+      { img: "images/mimanchi19.jpg", frase: 'Ti penso sempre.' },
+      { img: "images/mimanchi20.jpg", frase: 'La tua assenza si sente.' },
+      { img: "images/mimanchi21.jpg", frase: 'Ti porto nel cuore.' },
+      { img: "images/mimanchi22.jpg", frase: 'Nessuno può prendere il tuo posto.' },
+      { img: "images/mimanchi23.jpg", frase: 'Anche il silenzio parla di te.' },
+      { img: "images/mimanchi24.jpg", frase: 'Sei sempre nei miei pensieri.' },
+      { img: "images/mimanchi25.jpeg", frase: 'Sogno il giorno in cui ci rivedremo.' },
+      { img: "images/mimanchi26.jpg", frase: 'Mi manchi tanto.' },
+      { img: "images/mimanchi27.jpeg", frase: 'Ogni distanza è colmata da un ricordo.' },
+      { img: "images/mimanchi28.jpg", frase: 'Ti dedico questa canzone: <a href="https://www.youtube.com/watch?v=GJY8jJkDoMY" target="_blank">People are Strange</a>' },
+      { img: "images/mimanchi29.jpg", frase: 'Ci vediamo presto, lo prometto.' },
+      { img: "images/mimanchi30.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi31.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi32.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi33.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi34.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi35.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi36.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi37.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi38.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi39.jpg", frase: 'Mando un abbraccio virtuale.' },
+      { img: "images/mimanchi40.jpg", frase: 'Mando un abbraccio virtuale.' }
+    ]
+  };
 
-    .btn {
-      margin: 10px;
-      padding: 15px 25px;
-      font-size: 18px;
-      cursor: pointer;
-      color: #153a6b; /* Dark blue text */
-      border: none;
-      border-radius: 30px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-      transition: transform 0.1s, box-shadow 0.1s, background 0.2s;
-      font-weight: bold;
+  // Shuffle helper
+  function shuffle(array) {
+    let arr = array.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+    return arr;
+  }
 
-    .btn-triste {
-      background: linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%);
-    }
-    .btn-triste:hover {
-      background: linear-gradient(90deg, #c2e9fb 0%, #a1c4fd 100%);
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    }
+  // Track shuffled queues for each mood
+  const shuffledQueues = {
+    triste: [],
+    felice: [],
+    mimanchi: []
+  };
 
-    .btn-felice {
-      background: linear-gradient(90deg, #b7ffb2 0%, #5ee7df 100%);
+  function mostraRandom(gruppo) {
+    // If finished, reshuffle
+    if (!shuffledQueues[gruppo] || shuffledQueues[gruppo].length === 0) {
+      shuffledQueues[gruppo] = shuffle(dati[gruppo]);
     }
-    .btn-felice:hover {
-      background: linear-gradient(90deg, #5ee7df 0%, #b7ffb2 100%);
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    }
-
-    .btn-mimanchi {
-      background: linear-gradient(90deg, #fbc2eb 0%, #fcb69f 100%);
-    }
-    .btn-mimanchi:hover {
-      background: linear-gradient(90deg, #fcb69f 0%, #fbc2eb 100%);
-      transform: scale(1.05);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    }
-
-    /* Layout container for image and frase */
-    .display-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      margin-top: 40px;
-      gap: 30px;
-      min-height: 250px;
-    }
-
-    .image-side {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 180px;
-    }
-
-    img {
-      max-width: 180px;
-      max-height: 180px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-      display: block;
-      background: #eee;
-    }
-
-    /* Ancient yellow post-it style */
-    .frase-postit {
-      background: linear-gradient(135deg, #fdf5c2 0%, #f9e487 100%);
-      border: 1.5px solid #e1c766;
-      border-radius: 10px 18px 12px 10px;
-      box-shadow:
-        2px 4px 12px 0 rgba(194, 161, 54, 0.16),
-        0 2px 0 0 #ead349,
-        inset 0 1px 0 0 #fffbe6;
-      font-size: 22px;
-      color: #6a5b21;
-      font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
-      padding: 32px 26px 26px 26px;
-      min-width: 220px;
-      min-height: 100px;
-      text-align: left;
-      display: none;
-      position: relative;
-    }
-    .frase-postit::after {
-      /* Optional: little dog-ear on the corner for a post-it effect */
-      content: "";
-      position: absolute;
-      bottom: 10px;
-      right: 12px;
-      width: 30px;
-      height: 30px;
-      background: linear-gradient(135deg, #f7e388 60%, #f5e5a3 100%);
-      border-radius: 0 0 9px 0;
-      box-shadow: 2px 2px 4px 0 rgba(194, 161, 54, 0.11);
-      transform: rotate(8deg);
-      z-index: 1;
-    }
-    @media (max-width: 700px) {
-      .display-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
-      }
-      .frase-postit {
-        min-width: 0;
-        width: 98vw;
-        font-size: 19px;
-        padding: 18px 8px 20px 12px;
-      }
-      .image-side img {
-        max-width: 60vw;
-      }
-    }
-
-    /* Optional: style links inside the post-it */
-    .frase-postit a {
-      color: #3466af;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>Come ti senti oggi?</h1>
-  <button class="btn btn-triste" onclick="mostraRandom('triste')">Sono triste</button>
-  <button class="btn btn-felice" onclick="mostraRandom('felice')">Sono felice</button>
-  <button class="btn btn-mimanchi" onclick="mostraRandom('mimanchi')">Mi manchi</button>
-
-  <div class="display-container" id="output">
-    <div class="image-side">
-      <img id="immagine" src="" alt="emozione" style="display:none;" />
-    </div>
-    <div id="frase" class="frase-postit"></div>
-  </div>
-
-  <script>
-    const dati = {
-      triste: [
-        { img: "images/triste1.jpeg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=8UVNT4wvIGY" target="_blank">Somebody That I Used To Know</a>' },
-        { img: "images/triste2.jpg", frase: 'Un abbraccio virtuale. <a href="https://www.youtube.com/watch?v=RB-RcX5DS5A" target="_blank">Someone Like You</a>' },
-        { img: "images/triste3.jpg", frase: 'Ricorda: dopo la pioggia torna il sole. <a href="https://www.youtube.com/watch?v=YVkUvmDQ3HY" target="_blank">Fix You</a>' },
-        { img: "images/triste4.jpg", frase: 'Ogni lacrima è un seme di speranza.' },
-        { img: "images/triste5.jpg", frase: 'Anche nei giorni più grigi, sei amato.' },
-        { img: "images/triste6.jpg", frase: 'La tristezza passa, tu resta forte.' },
-        { img: "images/triste7.jpg", frase: 'Sii gentile con te stesso.' },
-        { img: "images/triste8.jpg", frase: 'Non sei solo.' },
-        { img: "images/triste9.jpg", frase: 'Domani è un altro giorno.' },
-        { img: "images/triste10.jpg", frase: 'Cerca la luce dentro di te.' },
-        { img: "images/triste11.jpg", frase: 'Ogni emozione è valida.' },
-        { img: "images/triste12.jpg", frase: 'Puoi superare tutto.' },
-        { img: "images/triste13.jpg", frase: 'Canta via la malinconia.' },
-        { img: "images/triste14.jpg", frase: 'Senti questa canzone: <a href="https://www.youtube.com/watch?v=kXYiU_JCYtU" target="_blank">Numb</a>' },
-        { img: "images/triste15.jpg", frase: 'Scrivi ciò che provi.' },
-        { img: "images/triste16.jpg", frase: 'Prenditi il tuo tempo.' },
-        { img: "images/triste17.jpeg", frase: 'Meriti serenità.' },
-        { img: "images/triste18.jpg", frase: 'Respira profondamente.' },
-        { img: "images/triste19.jpg", frase: 'Va bene chiedere aiuto.' },
-        { img: "images/triste20.jpg", frase: 'Sorridi, anche solo un po\'.' },
-        { img: "images/triste21.jpg", frase: 'Lascia andare ciò che non puoi controllare.' },
-        { img: "images/triste22.jpg", frase: 'Le emozioni passano.' },
-        { img: "images/triste23.jpg", frase: 'Ogni passo è importante.' },
-        { img: "images/triste24.jpg", frase: 'Tieniti stretto chi ti vuole bene.' },
-        { img: "images/triste25.jpg", frase: 'Oggi prendi cura di te.' },
-        { img: "images/triste26.jpg", frase: 'Puoi risplendere di nuovo.' },
-        { img: "images/triste27.jpg", frase: 'Racconta a qualcuno come ti senti.' },
-        { img: "images/triste28.jpg", frase: 'Ascolta il tuo cuore.' },
-        { img: "images/triste29.jpg", frase: 'Cerca il bello anche nei piccoli gesti.' },
-        { img: "images/triste30.jpg", frase: 'La notte è più buia prima dell\'alba.' }
-      ],
-      felice: [
-        { img: "images/felice1.jpeg", frase: 'La tua felicità illumina il mondo! <a href="https://www.youtube.com/watch?v=ZbZSe6N_BXs" target="_blank">Happy</a>' },
-        { img: "images/felice2.jpeg", frase: 'Che bello vederti sorridere!' },
-        { img: "images/felice3.jpeg", frase: 'Continua a sorridere, è contagioso.' },
-        { img: "images/felice4.jpeg", frase: 'Oggi è un giorno meraviglioso!' },
-        { img: "images/felice5.jpeg", frase: 'Condividi la tua gioia.' },
-        { img: "images/felice6.jpeg", frase: 'Balla come se nessuno ti guardasse!' },
-        { img: "images/felice7.jpeg", frase: 'Felicità è reale solo se condivisa.' },
-        { img: "images/felice8.jpeg", frase: 'La vita è bella.' },
-        { img: "images/felice9.jpeg", frase: 'Hai una luce speciale.' },
-        { img: "images/felice10.jpeg", frase: 'Ridi di gusto.' },
-        { img: "images/felice11.jpeg", frase: 'Esprimi gratitudine.' },
-        { img: "images/felice12.jpeg", frase: 'Senti questa energia positiva.' },
-        { img: "images/felice13.jpeg", frase: 'Che giornata fantastica!' },
-        { img: "images/felice14.jpeg", frase: 'Abbraccia chi ami.' },
-        { img: "images/felice15.jpeg", frase: 'Vivi ogni momento.' },
-        { img: "images/felice16.jpeg", frase: 'Sii fiero di te stesso.' },
-        { img: "images/felice17.jpeg", frase: 'Festeggia le piccole vittorie.' },
-        { img: "images/felice18.jpeg", frase: 'Canta la tua canzone preferita: <a href="https://www.youtube.com/watch?v=3GwjfUFyY6M" target="_blank">Celebrate</a>' },
-        { img: "images/felice19.jpeg", frase: 'Regala un sorriso.' },
-        { img: "images/felice20.jpeg", frase: 'Segui il tuo entusiasmo.' },
-        { img: "images/felice21.jpeg", frase: 'Il mondo è pieno di colori.' },
-        { img: "images/felice22.jpeg", frase: 'Ama ciò che fai.' },
-        { img: "images/felice23.jpeg", frase: 'Sei una forza positiva.' },
-        { img: "images/felice24.jpeg", frase: 'Lasciati ispirare dalla musica.' },
-        { img: "images/felice25.jpeg", frase: 'Ogni giorno è un dono.' },
-        { img: "images/felice26.jpeg", frase: 'Sorridi anche alle nuvole.' },
-        { img: "images/felice27.jpeg", frase: 'La gioia è dentro di te.' },
-        { img: "images/felice28.jpeg", frase: 'Sii il cambiamento che vuoi vedere.' },
-        { img: "images/felice29.jpeg", frase: 'Diffondi la tua allegria.' },
-        { img: "images/felice30.jpeg", frase: 'Oggi va tutto bene!' }
-      ],
-      mimanchi: [
-        { img: "images/mimanchi1.jpeg", frase: 'Mi manchi ogni singolo giorno. <a href="https://www.youtube.com/watch?v=2GJIQb7f4rA" target="_blank">Mi Manchi - Fausto Leali</a>' },
-        { img: "images/mimanchi2.jpeg", frase: 'Vorrei poterti abbracciare adesso.' },
-        { img: "images/mimanchi3.jpeg", frase: 'Il mio cuore ti cerca ovunque.' },
-        { img: "images/mimanchi1.jpg", frase: 'Penso spesso a te.' },
-        { img: "images/mimanchi2.jpg", frase: 'Anche la distanza non cambia ciò che provo.' },
-        { img: "images/mimanchi3.jpg", frase: 'Ogni ricordo con te è prezioso.' },
-        { img: "images/mimanchi4.jpg", frase: 'Ti aspetto con ansia.' },
-        { img: "images/mimanchi5.jpg", frase: 'La nostalgia è una forma d\'amore.' },
-        { img: "images/mimanchi6.jpg", frase: 'Spero di rivederti presto.' },
-        { img: "images/mimanchi7.jpg", frase: 'Mi mancano i tuoi sorrisi.' },
-        { img: "images/mimanchi8.jpg", frase: 'La lontananza rafforza i sentimenti.' },
-        { img: "images/mimanchi9.jpg", frase: 'Non vedo l\'ora di riabbracciarti.' },
-        { img: "images/mimanchi10.jpg", frase: 'Mando un pensiero a te.' },
-        { img: "images/mimanchi11.jpg", frase: 'Ogni giorno senza di te è più lungo.' },
-        { img: "images/mimanchi12.jpg", frase: 'Ascolta questa canzone: <a href="https://www.youtube.com/watch?v=1SiylvmFI_8" target="_blank">Far Away</a>' },
-        { img: "images/mimanchi13.jpg", frase: 'Mi manchi come l\'aria.' },
-        { img: "images/mimanchi14.jpg", frase: 'Ci rivedremo presto.' },
-        { img: "images/mimanchi15.jpg", frase: 'Il tempo senza di te scorre piano.' },
-        { img: "images/mimanchi16.jpg", frase: 'Ogni messaggio mi avvicina a te.' },
-        { img: "images/mimanchi17.jpg", frase: 'Vorrei che fossi qui.' },
-        { img: "images/mimanchi18.jpg", frase: 'La tua voce mi manca.' },
-        { img: "images/mimanchi19.jpg", frase: 'Ti penso sempre.' },
-        { img: "images/mimanchi20.jpg", frase: 'La tua assenza si sente.' },
-        { img: "images/mimanchi21.jpg", frase: 'Ti porto nel cuore.' },
-        { img: "images/mimanchi22.jpg", frase: 'Nessuno può prendere il tuo posto.' },
-        { img: "images/mimanchi23.jpg", frase: 'Anche il silenzio parla di te.' },
-        { img: "images/mimanchi24.jpg", frase: 'Sei sempre nei miei pensieri.' },
-        { img: "images/mimanchi25.jpeg", frase: 'Sogno il giorno in cui ci rivedremo.' },
-        { img: "images/mimanchi26.jpg", frase: 'Mi manchi tanto.' },
-        { img: "images/mimanchi27.jpeg", frase: 'Ogni distanza è colmata da un ricordo.' },
-        { img: "images/mimanchi28.jpg", frase: 'Ti dedico questa canzone: <a href="https://www.youtube.com/watch?v=GJY8jJkDoMY" target="_blank">People are Strange</a>' },
-        { img: "images/mimanchi29.jpg", frase: 'Ci vediamo presto, lo prometto.' },
-        { img: "images/mimanchi30.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi31.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi32.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi33.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi34.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi35.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi36.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi37.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi38.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi39.jpg", frase: 'Mando un abbraccio virtuale.' },
-        { img: "images/mimanchi40.jpg", frase: 'Mando un abbraccio virtuale.' }
-      ]
-    };
-
-    function mostraRandom(gruppo) {
-      const lista = dati[gruppo];
-      const casuale = lista[Math.floor(Math.random() * lista.length)];
-      const img = document.getElementById("immagine");
-      const frase = document.getElementById("frase");
-      img.src = casuale.img;
-      img.style.display = 'block';
-      frase.innerHTML = casuale.frase; // Use innerHTML so links work!
-      frase.style.display = 'block';
-    }
-  </script>
-</body>
-</html>
+    const casuale = shuffledQueues[gruppo].shift();
+    const img = document.getElementById("immagine");
+    const frase = document.getElementById("frase");
+    img.src = casuale.img;
+    img.style.display = 'block';
+    frase.innerHTML = casuale.frase;
+    frase.style.display = 'block';
+  }
+</script>
